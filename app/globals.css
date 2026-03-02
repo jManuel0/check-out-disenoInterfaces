@@ -191,34 +191,15 @@ body {
   display: grid;
   place-content: center;
   background: #fff;
+  overflow: hidden;
 }
 
-.item-icon {
+.item-photo {
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 0.7rem;
-  display: inline-block;
-}
-
-.icon-case {
-  background: linear-gradient(140deg, #8ad9df 0 35%, #f4f4f4 35% 60%, #28426f 60% 100%);
-}
-
-.icon-phone {
-  background: #0f1228;
-  border: 2px solid #232748;
-  position: relative;
-}
-
-.icon-phone::after {
-  content: "";
-  position: absolute;
-  width: 0.7rem;
-  height: 0.7rem;
-  border-radius: 50%;
-  background: #4ca7ff;
-  inset: 0;
-  margin: auto;
+  object-fit: cover;
+  display: block;
 }
 
 .item-copy h3 {

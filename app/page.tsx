@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   const items = [
     {
@@ -7,7 +9,8 @@ export default function Home() {
       quantity: "Quantity: 2 items",
       price: "EUR 36.40",
       unitPrice: "EUR 18.20 per item",
-      iconClass: "icon-case",
+      imageSrc: "/iphone%207.webp",
+      imageAlt: "Silicone Case for iPhone 7",
     },
     {
       id: 2,
@@ -16,7 +19,8 @@ export default function Home() {
       quantity: "Quantity: 4 items",
       price: "EUR 20.00",
       unitPrice: "EUR 5.00 per item",
-      iconClass: "icon-phone",
+      imageSrc: "/Protector%20Pantalla.webp",
+      imageAlt: "Tempered glass for iPhone",
     },
     {
       id: 3,
@@ -25,7 +29,8 @@ export default function Home() {
       quantity: "Quantity: 4 items",
       price: "EUR 20.00",
       unitPrice: "EUR 5.00 per item",
-      iconClass: "icon-phone",
+      imageSrc: "/Protector%20Pantalla.webp",
+      imageAlt: "Tempered glass for iPhone",
     },
   ];
 
@@ -80,8 +85,14 @@ export default function Home() {
           <ul className="item-list">
             {items.map((item) => (
               <li key={item.id} className="item-row">
-                <div className="item-thumb" aria-hidden="true">
-                  <span className={`item-icon ${item.iconClass}`} />
+                <div className="item-thumb">
+                  <Image
+                    src={item.imageSrc}
+                    alt={item.imageAlt}
+                    width={64}
+                    height={64}
+                    className="item-photo"
+                  />
                 </div>
                 <div className="item-copy">
                   <h3>{item.name}</h3>
